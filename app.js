@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(json());
 app.use(
   cors({
-    origin: "http://localhost:5173", // adresse front
+    origin: process.env.URL_FRONT, // adresse front
     credentials: true,
   })
 );
