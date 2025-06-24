@@ -61,7 +61,8 @@ export async function login(req, res) {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "strict",
+      sameSite: "none", // <-- important pour cross-domain
+      secure: true, // <-- obligatoire avec sameSite: "none"
       maxAge: 60 * 60 * 1000,
     });
     res.status(202).json({ message: "Login Réussi !" });
