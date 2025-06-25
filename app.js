@@ -7,6 +7,7 @@ dotenv.config();
 
 import { userRouter } from "./user/userRoutes.js";
 import { formationRouter } from "./formation/formationRoutes.js";
+import { experienceRouter } from "./experience/experienceRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 4444;
@@ -39,3 +40,4 @@ app.use(cookieParser());
 
 app.use("/api", userRouter);
 app.use("/api/formation", formationRouter);
+app.use("/api/experience", experienceRouter);
