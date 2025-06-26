@@ -8,9 +8,10 @@ dotenv.config();
 import { userRouter } from "./user/userRoutes.js";
 import { formationRouter } from "./formation/formationRoutes.js";
 import { experienceRouter } from "./experience/experienceRoutes.js";
+import { competenceRouter } from "./competences/competenceRoutes.js";
 
 const app = express();
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT;
 
 async function connect() {
   // MongoDB connection
@@ -41,3 +42,4 @@ app.use(cookieParser());
 app.use("/api", userRouter);
 app.use("/api/formation", formationRouter);
 app.use("/api/experience", experienceRouter);
+app.use("/api/competence", competenceRouter);
